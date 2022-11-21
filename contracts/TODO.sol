@@ -10,12 +10,20 @@ contract TODO {
         bool done;
 
       }
+
       Task[] tasks;
 
 
-      function createTask(string _content ,string _author) public{
-        tasks.push(Task(tasks.length, now, _content , _author,false));
+      function createTask(string memory _content ,string memory _author) public{
+        tasks.push(Task(tasks.length, block.timestamp , _content , _author,false));
         
       }
-
+      function getTask(uint id) public constant 
+      returns(
+        uint,
+        uint,
+        string,
+        string,
+        bool
+      )
 }
